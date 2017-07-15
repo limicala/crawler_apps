@@ -3,11 +3,15 @@
 """
  by renjie
 """
-import threading, time
-from contextlib import closing
-import requests
-import constant
 import sys
+import threading
+from contextlib import closing
+
+import requests
+
+from video_download import constant
+
+
 class FileDownloader(threading.Thread):
     def __init__(self, file_dir, chapter, id):
         threading.Thread.__init__(self)
@@ -18,7 +22,7 @@ class FileDownloader(threading.Thread):
     def run(self):
         url = self.__chapter.url
         fileName = self.__file_dir +"/"+ self.__chapter.name + ".mp4"
-
+        print(url)
         with closing(requests.get(url, stream=True, timeout=10)) as response:
             constant.TOTAL += int(response.headers['content-length'])  # 内容体总大小
             with open(fileName, "wb") as file:

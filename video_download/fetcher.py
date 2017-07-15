@@ -4,8 +4,11 @@
  by renjie
 """
 import logging
+
 import requests
-import constant
+
+from video_download import constant
+
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"
 iMoocHost = "www.imooc.com"
 jikeHost = "www.jikexueyuan.com"

@@ -22,7 +22,7 @@ class Properties(object):
 
     def getProperties(self):
         try:
-            pro_file = open(self.fileName, 'Ur')
+            pro_file = open(self.fileName, 'Ur', encoding='utf-8')
             for line in pro_file.readlines():
                 line = line.strip().replace('\n', '')
                 if line.find("#") != -1:

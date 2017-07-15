@@ -3,12 +3,16 @@
 """
  by renjie
 """
-from spider.fetcher import iMoocHost, iMoocFetcher, jikeHost, jikeFetcher
-from spider.parser import iMoocParser, jikeParser
-from video_download.file_downloader import FileDownloader
-from model.course import Course
 import os
-import constant
+
+from video_download.parser import iMoocParser, jikeParser
+
+from video_download import constant
+from video_download.fetcher import iMoocHost, iMoocFetcher, jikeHost, jikeFetcher
+from video_download.file_downloader import FileDownloader
+from video_download.model.course import Course
+
+
 class SpiderGUI(object):
 
     def __init__(self):

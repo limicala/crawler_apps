@@ -4,7 +4,9 @@
  by renjie
 """
 import threading
-from util import Properties
+
+from video_download.util import Properties
+
 PERLIST=[]#记录每个线程的进度
 
 LOCK = threading.Lock()#线程锁
@@ -12,7 +14,7 @@ LOCK = threading.Lock()#线程锁
 PERSUM=0.0#用于描述总进度
 
 TOTAL=0.0
-dictProperties=Properties("config.txt").getProperties()
+dictProperties=Properties(".config").getProperties()
 
 chunk_size = int(dictProperties.get("chunk_size")) # 单次请求最大值
 

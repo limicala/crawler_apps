@@ -4,8 +4,11 @@
  by renjie
 """
 from bs4 import BeautifulSoup
-from model.chapter import Chapter
-import constant
+
+from video_download import constant
+from video_download.model.chapter import Chapter
+
+
 class iMoocParser(object):
     DOWNLOAD_URL = 'http://www.imooc.com/course/ajaxmediainfo/?mid={}&mode=flash'  # 下载链接
     def parser(self, course, fetcher, html):
